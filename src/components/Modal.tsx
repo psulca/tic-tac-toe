@@ -1,6 +1,8 @@
+import { Link } from 'react-router-dom'
+
 export default function Modal() {
   return (
-    <div className='modal'>
+    <dialog className='modal'>
       <div>
         <h1>Game Settings</h1>
         <div>
@@ -19,9 +21,11 @@ export default function Modal() {
           <p>Computer</p>
         </div>
       </div>
-      <button>
-        Start Game
-      </button>
-    </div>
+      <Link to='game'>
+        <button>
+          Start Game
+        </button>
+      </Link>
+    </dialog>
   )
 }

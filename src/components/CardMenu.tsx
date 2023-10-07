@@ -1,17 +1,15 @@
 export default function CardMenu() {
   return (
-    <div className='container'>
-      <main>
-        <header>
-        </header>
-        <section>
+    <div className='menu-container'>
+      <section className='menu-card'>
+        <header className='menu-card-header'>
           <h1>Select Game Mode</h1>
-          <div>
-            <p>PVP</p>
-            <p>PVC</p>
-          </div>
-        </section>
-      </main>
+        </header>
+        <main className="menu-card-main">
+          <p>PVP</p>
+          <p>PVC</p>
+        </main>
+      </section>
     </div>
   )
 }
