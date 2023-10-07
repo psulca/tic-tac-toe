@@ -1,13 +1,13 @@
 import { Outlet } from 'react-router-dom'
-import Header from './components/Header'
+import HeaderTicTacToe from './components/HeaderTicTacToe'
 import './App.css'
 
 function App() {
   return (
-    <main>
-      <Header />
+    <>
+      <HeaderTicTacToe />
       <Outlet />
-    </main>
+    </>
   )
 }
 

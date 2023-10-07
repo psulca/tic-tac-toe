@@ -1,3 +1,21 @@
+/*headerTicTacToe*/
+
+.headerTicTacToe-container {
+  background-color: blue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*cardmenu*/
+
+.menu-container {
+  background-color: red;
+  display: flex;
+  align-items: center;
+  min-height: 300px;
+}
+
 /*tictactoe*/
 
 .tictactoe-board-container {
