@@ -1,0 +1,24 @@
+/*tictactoe*/
+
+.tictactoe-board-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tictactoe-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  min-width: 100px;
+  min-height: 100px;
+  background-color: blue;
+}
+
+.tictactoe-board-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  font-size: 50px;
+  cursor: pointer;
+}
