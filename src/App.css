@@ -2,9 +2,11 @@
 
 .headerTicTacToe-container {
   background-color: blue;
+  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
+  white-space: nowrap;
 }
 
 /*cardmenu*/
@@ -13,7 +15,70 @@
   background-color: red;
   display: flex;
   align-items: center;
+  justify-content: center;
   min-height: 300px;
+}
+
+.menu-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 150px;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid blue;
+  padding: 10px;
+}
+
+.menu-card-header {
+  white-space: nowrap;
+}
+
+.menu-card-modes {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.menu-card-modes-select {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.menu-card-modes-select p {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+/*game-settings-modal*/
+
+.modal-overlay {
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+}
+
+.game-settings-container {
+  background-color: green;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  gap: 20px
+}
+
+.game-settings-container div {
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.game-settings-container div select {
+  width: 100px;
 }
 
 /*tictactoe*/

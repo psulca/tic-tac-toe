@@ -5,16 +5,16 @@ import Modal from "../components/Modal"
 
 export default function MainMenu() {
 
-  const [isModalOpen, setModal] = useState(false)
+  const [isConfigModalOpen, handleConfigModal] = useState(false)
 
   const handleModal = () => {
-    setModal(!isModalOpen)
+    handleConfigModal(!isConfigModalOpen)
   }
 
   return (
     <>
       <CardMenu handleModal={handleModal}/>
-      {isModalOpen && <Modal handleModal={handleModal}/>}
+      {isConfigModalOpen && <Modal handleModal={handleModal}/>}
     </>
   )
 }
