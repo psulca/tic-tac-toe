@@ -1,7 +1,7 @@
 import { useState } from "react"
-import CardMenu from "../components/CardMenu"
-import Modal from "../components/Modal"
-
+import CardMenu from "../components/mainMenu/CardMenu"
+import Modal from "../components/mainMenu/Modal"
+import HeaderMainMenu from '../components/mainMenu/HeaderMainMenu'
 
 export default function MainMenu() {
 
@@ -12,9 +12,10 @@ export default function MainMenu() {
   }
 
   return (
-    <>
-      <CardMenu handleModal={handleModal}/>
-      {isConfigModalOpen && <Modal handleModal={handleModal}/>}
-    </>
+    <div className="mainMenu-container">
+      <HeaderMainMenu />
+      <CardMenu handleModal={handleModal} />
+      {isConfigModalOpen && <Modal handleModal={handleModal} />}
+    </div>
   )
 }

@@ -2,10 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from 'react-router-dom'
 
+
 import MainMenu from './pages/MainMenu.tsx'
 import TicTacToe from './pages/TicTacToe.tsx'
 
 import App from './App.tsx'
+import './fonts/GunnyRewritten/gnyrwn977.otf'
 import './index.css'
 
 const router = createBrowserRouter(

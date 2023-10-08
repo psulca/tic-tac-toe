@@ -2,9 +2,9 @@ export default function Modal({ handleModal }: { handleModal: () => void }) {
 
   return (
     <div className='modal-overlay'>
-      <div className='game-settings-container'>
+      <div className='modal-container'>
         <h1>Game Settings</h1>
-        <div className='game-settings-difficulty'>
+        <div>
           <h2>Select Difficulty</h2>
           <select name='difficulty' id='difficulty'>
             <option value='easy'>Easy</option>
@@ -12,7 +12,7 @@ export default function Modal({ handleModal }: { handleModal: () => void }) {
             <option value='impossible'>Impossible</option>
           </select>
         </div>
-        <div className='game-settings-timer'>
+        <div>
           <h2>Time per turn</h2>
           <select name="timer" id="timer">
             <option value="10">10s</option>
@@ -21,7 +21,7 @@ export default function Modal({ handleModal }: { handleModal: () => void }) {
             <option value="unlimited">Unlimited</option>
           </select>
         </div>
-        <div className='game-settings-move'>
+        <div>
           <h2>First move</h2>
           <select name='move' id="move">
             <option value="player">Player</option>

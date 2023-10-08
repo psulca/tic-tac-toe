@@ -1,8 +1,7 @@
 /*headerTicTacToe*/
 
-.headerTicTacToe-container {
+.headerMainMenu-container {
   background-color: blue;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,6 +9,11 @@
 }
 
 /*cardmenu*/
+
+.mainMenu-container {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+}
 
 .menu-container {
   background-color: red;
@@ -54,9 +58,10 @@
 
 .modal-overlay {
   box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
+  height: 0;
 }
 
-.game-settings-container {
+.modal-container {
   background-color: green;
   white-space: nowrap;
   position: absolute;
@@ -83,25 +88,78 @@
 
 /*tictactoe*/
 
+.tictactoe-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.tictactoe-header {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.tictactoe-header section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.tictactoe-header .utility-icon {
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.tictactoe-header-info {
+  font-size: 2rem;
+}
+
 .tictactoe-board-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
 .tictactoe-board {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  min-width: 150px;
-  min-height: 150px;
+  min-width: 320px;
+  min-height: 320px;
   background-color: blue;
 }
 
 .tictactoe-board-item {
-  min-height: 50px;
   display: flex;
+  min-height: 106px;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   border: 1px solid black;
   cursor: pointer;
+}
+
+.tictactoe-turn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+}
+
+.tictactoe-turn section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.turn-icon {
+  min-width: 30px;
 }
