@@ -1,4 +1,9 @@
 import { Link } from "react-router-dom"
+import { DrawTextSvg } from "../svgs/DrawTextSvg";
+import { WinTextSvg } from "../svgs/WinTextSvg";
+import { XMarkOneSvg } from "../svgs/XMarkOneSvg";
+import { OMarkOneSvg } from "../svgs/OMarkOneSvg";
+
 interface WinnerModalProps {
   winner: string;
   resetGame: () => void;
@@ -7,11 +12,13 @@ interface WinnerModalProps {
 export default function WinnerModal({ winner, resetGame }: WinnerModalProps) {
   return (
     <div className='modal-overlay'>
-      <div className='modal-container'>
-        <h2>{winner}</h2>
-        <button onClick={resetGame}>reset game</button>
+      <div className='modal-container border-draw border-dashed'>
+        {winner === 'X' && <XMarkOneSvg id={9} />}
+        {winner === 'O' && <OMarkOneSvg id={9} />}
+        {winner === 'draw' ? <DrawTextSvg /> : <WinTextSvg /> }
+        <button className='border-draw border-line' onClick={resetGame}>reset game</button>
         <Link to='/'>
-          <button> return to main menu</button>
+          <button className='border-draw border-line'> return to main menu</button>
         </Link>
       </div>
     </div>

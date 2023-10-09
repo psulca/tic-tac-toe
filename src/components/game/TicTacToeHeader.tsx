@@ -1,30 +1,34 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom'
+import { BackArrowSvg } from '../svgs/BackArrowSvg'
+import { DarkModeSvg } from '../svgs/DarkModeSvg';
+import { LightModeSvg } from '../svgs/LightModeSvg';
 
 interface ScoreProps {
-  scoreD: number;
   round: number;
 }
 
-export default function TicTacToeHeader({ scoreD, round }: ScoreProps) {
+export default function TicTacToeHeader({ round }: ScoreProps) {
   return (
     <header className='tictactoe-header'>
-      <section className='utility-icon'>
-        <Link to='/'>
-          <p>back logo</p>
-        </Link>
-      </section>
-      <section className='tictactoe-header-info'>
-        <p>
-          Round: {round}
-        </p>
-        <div>
-          D logo: {scoreD}
+      <div className='tictactoe-header-content'>
+        <div className='tictactoe-nav'>
+          <div className='utility-icon'>
+            <Link to='/'>
+              <BackArrowSvg />
+            </Link>
+          </div>
+          <div className='utility-icon'>
+            <DarkModeSvg />
+            <LightModeSvg />
+          </div>
         </div>
-      </section>
-      <section className='utility-icon'>
-        <p>mode logo</p>
-      </section>
 
+        <section className='tictactoe-round'>
+          <p>
+            Round: {round}
+          </p>
+        </section>
+      </div>
     </header>
   )
 }

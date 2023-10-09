@@ -78,7 +78,7 @@ export default function TicTacToe() {
   return (
     <>
       <section className='tictactoe-container'>
-        <TicTacToeHeader scoreD={score.D} round={round} />
+        <TicTacToeHeader round={round} />
         <Board board={board} drawSymbolOnBoard={drawSymbolOnBoard} />
         <TicTacToeFooter score={score} turn={turn} />
       </section>
