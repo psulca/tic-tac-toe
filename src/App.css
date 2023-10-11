@@ -1,12 +1,29 @@
-.dark {
-  background-color: rgba(39, 55, 77, 0.9);
+.main-container {
+  background: linear-gradient(transparent, transparent 50%, #27374de6 50%, #27374de6);
+  background-size: 100% 200%;
+  /*trasition effect for background*/
+  transition: background 1s;
 }
 
-.light {
-  background-color: rgba(255, 255, 255, 0.5);
+.dark {
+  background-position: 100% 100%;
+}
+
+.dark-on {
+  transform: translateY(-180%);
+}
+
+.light-on {
+  transform: translateY(180%);
 }
 
 #light-mode-svg {
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+#dark-mode-svg {
+  transition: all 1s ease-in-out;
   cursor: pointer;
 }
 
@@ -156,8 +173,24 @@ button:hover {
   min-width: 300px;
 }
 
+.utility-icon {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50px;
+  min-width: 50px;
+  overflow: hidden;
+}
+
+.utility-icon svg {
+  position: absolute;
+}
+
 .utility-icon a {
   display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
 }
 

@@ -10,7 +10,7 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={`${theme} main-container` }>
+      <div className={`main-container ${theme}`}>
         <Outlet />
       </div>
     </ThemeContext.Provider>

@@ -3,8 +3,7 @@ import { BackArrowSvg } from '../svgs/BackArrowSvg'
 import { DarkModeSvg } from '../svgs/DarkModeSvg';
 import { LightModeSvg } from '../svgs/LightModeSvg';
 
-import { useContext } from 'react';
-import { ThemeContext } from '../../context/theme-context';
+
 
 interface ScoreProps {
   round: number;
@@ -12,12 +11,8 @@ interface ScoreProps {
 
 export default function TicTacToeHeader({ round }: ScoreProps) {
 
-  const { theme, setTheme } = useContext(ThemeContext);
 
-  const handleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  }
-  
+
 
   return (
     <header className='tictactoe-header'>
@@ -28,8 +23,9 @@ export default function TicTacToeHeader({ round }: ScoreProps) {
               <BackArrowSvg />
             </Link>
           </div>
-          <div onClick={handleTheme} className='utility-icon'>
-            {theme === 'light' ? <LightModeSvg /> : <DarkModeSvg />}
+          <div className='utility-icon'>
+            <LightModeSvg />
+            <DarkModeSvg />
           </div>
         </div>
 
