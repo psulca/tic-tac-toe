@@ -1,9 +1,19 @@
 import { Outlet } from 'react-router-dom'
 import './App.css'
 
+import { ThemeContext } from './context/theme-context'
+import { useState } from 'react'
+
 function App() {
+
+  const [theme, setTheme] = useState('light')
+
   return (
-    <Outlet />
+    <ThemeContext.Provider value={{ theme, setTheme }}>
+      <div className={`${theme} main-container` }>
+        <Outlet />
+      </div>
+    </ThemeContext.Provider>
   )
 }
 

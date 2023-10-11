@@ -1,3 +1,15 @@
+.dark {
+  background-color: rgba(39, 55, 77, 0.9);
+}
+
+.light {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+#light-mode-svg {
+  cursor: pointer;
+}
+
 /*general utility*/
 
 .border-draw {
@@ -142,10 +154,6 @@ button:hover {
   display: flex;
   justify-content: space-between;
   min-width: 300px;
-}
-
-.tictactoe-header .utility-icon {
-  cursor: pointer;
 }
 
 .utility-icon a {
