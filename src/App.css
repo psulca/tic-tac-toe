@@ -27,6 +27,11 @@
   cursor: pointer;
 }
 
+#turn-direction {
+  transition: transform 0.5s ;
+}
+
+
 /*general utility*/
 
 .border-draw {
