@@ -1,22 +1,24 @@
 import { Link } from "react-router-dom"
 import { PlayButtonSvg } from "../svgs/PlayButtonSvg"
 import { useContext } from "react"
-import { GameModeContext } from "../../context/gameMode-context"
+import { SettingsContext } from "../../context/settingsContext"
 
 
 export default function CardMenu() {
 
-  const { gameMode, setGameMode } = useContext(GameModeContext)
+  const { gameMode, setGameMode } = useContext(SettingsContext)
 
   const handleToPVP = () => {
-    if(gameMode === 'PVC') {
+    if (gameMode === 'PVC') {
       setGameMode('PVP')
+      localStorage.setItem('gameMode', 'PVP')
     }
   }
 
   const handleToPVC = () => {
-    if(gameMode === 'PVP') {
+    if (gameMode === 'PVP') {
       setGameMode('PVC')
+      localStorage.setItem('gameMode', 'PVC')
     }
   }
 
