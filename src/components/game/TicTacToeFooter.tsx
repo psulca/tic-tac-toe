@@ -5,9 +5,12 @@ import { TurnArrowSvg } from "../svgs/TurnArrowSvg";
 interface TurnProps {
   turn: string;
   score: { X: number; O: number; D: number };
+  time: number;
 }
 
-export default function TicTacToeFooter({ score, turn }: TurnProps) {
+export default function TicTacToeFooter({ score, turn, time }: TurnProps) {
+
+
   return (
     <footer className='tictactoe-turn-container'>
       <div className='tictactoe-turn'>
@@ -16,7 +19,7 @@ export default function TicTacToeFooter({ score, turn }: TurnProps) {
           <p>{score.O}</p>
         </section>
         <section className='turn-icon'>
-          {turn}
+          {isNaN(time) ? '' : `${time}s`}
           <TurnArrowSvg turn={turn} />
           <div>
             {score.D}
