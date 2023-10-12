@@ -21,13 +21,6 @@ export default function Modal({ handleModal }: { handleModal: () => void }) {
             <option value="unlimited">Unlimited</option>
           </select>
         </div>
-        <div>
-          <h3>First move</h3>
-          <select name='move' id="move" className='select-drop'>
-            <option value="player">Player</option>
-            <option value="computer">Computer</option>
-          </select>
-        </div>
         <button className='border-draw border-line' onClick={handleModal}>Apply</button>
       </div>
     </div>
