@@ -11,9 +11,6 @@ interface ScoreProps {
 
 export default function TicTacToeHeader({ round }: ScoreProps) {
 
-
-
-
   return (
     <header className='tictactoe-header'>
       <div className='tictactoe-header-content'>

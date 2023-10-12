@@ -1,8 +1,3 @@
-:root {
-  --primary-color: #eee;
-  --secondary-color: #b5b5b5;
-}
-
 .main-container {
   background: linear-gradient(
     transparent,
@@ -11,14 +6,12 @@
     #030c19e6
   );
   background-size: 100% 200%;
-  /*trasition effect for background*/
   transition: background 1s;
+  display: grid;
 }
 
 .dark {
   background-position: 100% 100%;
-  --primary-color: #9db2bf;
-  --secondary-color: #b5b5b5;
 }
 
 .dark-on {
@@ -31,12 +24,10 @@
 
 #light-mode-svg {
   transition: all 1s ease-in-out;
-  cursor: pointer;
 }
 
 #dark-mode-svg {
   transition: all 1s ease-in-out;
-  cursor: pointer;
 }
 
 #turn-direction {
@@ -56,8 +47,27 @@
   border: solid 2px #000;
 }
 
+.border-line-main {
+  border: solid 2px #dde6ed;
+}
+
 .border-dashed {
   border: dashed 5px #b5b5b5;
+}
+
+.select-drop {
+  box-shadow: none;
+  flex: 1;
+  padding: 0 0.5em;
+  cursor: pointer;
+  border-right: 0.5em solid transparent;
+  position: relative;
+  display: flex;
+  width: 7em;
+  height: 2em;
+  border-radius: .25em;
+  overflow: hidden;
+  font-size: 1.5rem;
 }
 
 button {
@@ -65,17 +75,38 @@ button {
   padding: 0.5rem 0.5rem;
   margin: 0 0.5rem;
   font-size: 2rem;
-  color: #b5b5b5;
 }
 
 button:hover {
   box-shadow: 5px 18px 4px -6px hsla(0, 0%, 0%, 0.3);
 }
 
+.svg-spinner {
+  animation: spin 1s infinite linear;
+  animation-play-state: paused;
+  transform-origin: center;
+}
+
+.svg-spinner:hover {
+  animation-play-state: running;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.selected {
+  background-color: rgb(183, 20, 31, 0.95);
+}
+
 /*headerTicTacToe*/
 
 .headerMainMenu-container {
-  background-color: blue;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,17 +115,25 @@ button:hover {
 
 /*cardmenu*/
 
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  min-width: 300px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
 .mainMenu-container {
-  display: grid;
-  grid-template-rows: 80px 1fr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
 }
 
 .menu-container {
-  background-color: red;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 300px;
+  color: white;
+  mix-blend-mode: difference;
 }
 
 .menu-card {
@@ -103,7 +142,6 @@ button:hover {
   min-width: 150px;
   align-items: center;
   gap: 20px;
-  border: 1px solid blue;
   padding: 10px;
 }
 
@@ -123,17 +161,19 @@ button:hover {
   gap: 20px;
 }
 
-.menu-card-modes-select p {
-  border: 1px solid black;
-  padding: 3px;
+.menu-card-modes-select button {
+  color: #dde6ed;
 }
 
 /*game-settings-modal*/
 
 .modal-overlay {
-  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.7);
-  height: 0;
-  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-container {
@@ -149,6 +189,17 @@ button:hover {
   align-items: center;
   gap: 20px;
   z-index: 100;
+}
+
+.modal-container h3 {
+  font-size: 2rem;
+}
+
+.modal-container div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
 }
 
 .game-settings-container div {
@@ -188,7 +239,7 @@ button:hover {
 .tictactoe-nav {
   display: flex;
   justify-content: space-between;
-  min-width: 300px;
+  min-width: 300px; 
 }
 
 .utility-icon {
@@ -199,10 +250,12 @@ button:hover {
   min-height: 50px;
   min-width: 50px;
   overflow: hidden;
+  mix-blend-mode: difference;
 }
 
 .utility-icon svg {
   position: absolute;
+  cursor: pointer;
 }
 
 .utility-icon a {
@@ -216,7 +269,7 @@ button:hover {
   display: flex;
   justify-content: center;
   font-size: 3rem;
-  color: white;
+  color: #dde6ed;
   mix-blend-mode: difference;
 }
 
@@ -254,8 +307,8 @@ button:hover {
 .tictactoe-turn-container {
   display: flex;
   justify-content: center;
-  color: white;
-  mix-blend-mode: difference; 
+  color: #dde6ed;
+  mix-blend-mode: difference;
 }
 
 .tictactoe-turn {
