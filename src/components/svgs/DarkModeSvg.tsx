@@ -21,6 +21,7 @@ export const DarkModeSvg = () => {
 
   const toLightMode = () => {
     setTheme('light')
+    localStorage.setItem('theme', 'light');
   }
 
   return (
