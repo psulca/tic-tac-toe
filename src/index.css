@@ -20,7 +20,8 @@ body {
   display: grid;
   min-height: 100vh;
   grid-template-rows: 1fr;
-  background-image: url("1.jpg");
+  /* background-image: url("1.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
+  background-color: white;
 }

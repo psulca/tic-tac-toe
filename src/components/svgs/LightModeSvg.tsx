@@ -25,7 +25,7 @@ export function LightModeSvg() {
   }
 
   return (
-    <svg onMouseEnter={onEnter} onMouseLeave={onLeave} onClick={toDarkMode} id='light-mode-svg' className={theme === 'dark' ? 'dark-on' : ''} height="22" viewBox="0 0 99 81" fill="none" stroke='#000' xmlns="http://www.w3.org/2000/svg">
+    <svg onMouseEnter={onEnter} onMouseLeave={onLeave} onClick={toDarkMode} id='light-mode-svg' className={theme === 'dark' ? 'dark-on' : ''} height="22" viewBox="0 0 99 81" fill="none" stroke='#fff' xmlns="http://www.w3.org/2000/svg">
       <path data-ignore="true" d="M33.1142 28.9933C30.9554 29.2472 27.5992 33.6583 26.9329 35.5092C23.9745 43.727 28.656 50.4175 37.0766 52.0808C42.6344 53.1787 49.7133 52.8838 54.6344 49.8443C60.4925 46.226 59.6398 36.2228 57.8395 30.7191C56.8636 27.7356 55.3657 24.8634 52.2393 23.7453C49.6212 22.809 46.9125 22.9748 44.702 24.6963C41.3983 27.2691 38.927 30.3478 36.2841 33.4312" strokeWidth="5" strokeLinecap="round" />
       <path d="M3 60.3754C6.05743 57.0401 9.80934 54.4831 13.1437 51.4997C14.1134 50.6321 16.2611 50.3368 16.9476 48.9637" strokeWidth="5" strokeLinecap="round" />
       <path d="M10.6078 15.6797C12.2213 15.6797 13.7327 17.7737 14.7287 18.832C16.3884 20.5954 18.1337 22.2194 19.8181 23.9038C20.2932 24.3789 21.1337 24.5807 21.4559 25.1894C21.7465 25.7381 22.0707 26.2631 22.6535 26.4574" strokeWidth="5" strokeLinecap="round" />
