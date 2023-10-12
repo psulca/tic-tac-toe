@@ -104,6 +104,16 @@ button:hover {
   background-color: rgb(183, 20, 31, 0.95);
 }
 
+.scale {
+  transform: scale(0.8);
+  transition: transform 0.5s;
+}
+
+.scale:hover {
+  transform: scale(1);
+  transition: transform 0.5s;
+}
+
 /*headerTicTacToe*/
 
 .headerMainMenu-container {
