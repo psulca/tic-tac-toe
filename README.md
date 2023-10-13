@@ -1,5 +1,5 @@
-# project web: https://tic-tac-toe-swart-rho.vercel.app/
-
+# Deploy: https://tic-tac-toe-swart-rho.vercel.app/
+---
 # Tic Tac Toe 
 
 This is a simple Tic Tac Toe game built using Vite, React, and Typescript. It also incorporates vivus for draw animations.
