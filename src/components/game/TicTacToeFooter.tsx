@@ -1,6 +1,10 @@
 import { PlayerOneSvg } from "../svgs/utilitySvgs/PlayerOneSvg";
 import { PlayerTwoSvg } from "../svgs/utilitySvgs/PlayerTwoSvg";
 import { TurnArrowSvg } from "../svgs/gameSvgs/TurnArrowSvg";
+import { ComputerSvg } from "../svgs/utilitySvgs/ComputerSvg";
+
+import { SettingsContext } from "../../context/settingsContext";
+import { useContext } from "react";
 
 interface TurnProps {
   turn: string;
@@ -10,6 +14,7 @@ interface TurnProps {
 
 export default function TicTacToeFooter({ score, turn, time }: TurnProps) {
 
+  const { gameMode } = useContext(SettingsContext)
 
   return (
     <footer className='tictactoe-turn-container'>
@@ -26,7 +31,7 @@ export default function TicTacToeFooter({ score, turn, time }: TurnProps) {
           </div>
         </section>
         <section className='tictactoe-score-player'>
-          <PlayerTwoSvg />
+          {gameMode === 'PVP' ? <PlayerTwoSvg /> : <ComputerSvg />}
           <p>{score.X}</p>
         </section>
       </div>
