@@ -41,10 +41,11 @@ export default function TicTacToe() {
         const gameOver = checkGameOver(boardUpdated);
         if (gameOver !== '') {
           gameOverTrigger(gameOver);
+        } else {
+          const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
+          setTurn(newTurn);
+          setTime(Number(timer));
         }
-        const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
-        setTurn(newTurn);
-        setTime(Number(timer));
       }
     }
   };
@@ -62,14 +63,16 @@ export default function TicTacToe() {
 
   useEffect(() => {
     if (timer === 'unlimited') return
-    if (time > 0) {
-      const interval = setInterval(() => {
-        setTime((prevTime) => prevTime - 1);
-      }, 1000);
-      return () => clearInterval(interval);
-    }
-    if (time === 0) {
-      gameOverTrigger(turn === TURNS.X ? TURNS.O : TURNS.X)
+    if (!isOver) {
+      if (time > 0) {
+        const interval = setInterval(() => {
+          setTime((prevTime) => prevTime - 1);
+        }, 1000);
+        return () => clearInterval(interval);
+      }
+      if (time === 0) {
+        gameOverTrigger(turn === TURNS.X ? TURNS.O : TURNS.X)
+      }
     }
   }, [time])
 
@@ -84,10 +87,11 @@ export default function TicTacToe() {
       const gameOver = checkGameOver(boardUpdated);
       if (gameOver !== '') {
         gameOverTrigger(gameOver);
+      } else {
+        const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
+        setTurn(newTurn);
+        setTime(Number(timer));
       }
-      const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
-      setTurn(newTurn);
-      setTime(Number(timer));
     }
   }, [turn])
 

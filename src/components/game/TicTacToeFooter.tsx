@@ -21,7 +21,7 @@ export default function TicTacToeFooter({ score, turn, time }: TurnProps) {
       <div className='tictactoe-turn'>
         <section className='tictactoe-score-player'>
           <PlayerOneSvg />
-          <p>{score.O}</p>
+          <p>{score.X}</p>
         </section>
         <section className='turn-icon'>
           {isNaN(time) ? '' : `${time}s`}
@@ -32,7 +32,7 @@ export default function TicTacToeFooter({ score, turn, time }: TurnProps) {
         </section>
         <section className='tictactoe-score-player'>
           {gameMode === 'PVP' ? <PlayerTwoSvg /> : <ComputerSvg />}
-          <p>{score.X}</p>
+          <p>{score.O}</p>
         </section>
       </div>
     </footer>
