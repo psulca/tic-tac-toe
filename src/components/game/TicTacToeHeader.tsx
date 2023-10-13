@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
-import { BackArrowSvg } from '../svgs/BackArrowSvg'
-import { DarkModeSvg } from '../svgs/DarkModeSvg';
-import { LightModeSvg } from '../svgs/LightModeSvg';
+import { BackArrowSvg } from '../svgs/utilitySvgs/BackArrowSvg'
+import { DarkModeSvg } from '../svgs/utilitySvgs/DarkModeSvg';
+import { LightModeSvg } from '../svgs/utilitySvgs/LightModeSvg';
 
 
 

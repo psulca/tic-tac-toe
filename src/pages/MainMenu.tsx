@@ -1,9 +1,9 @@
 import { useState } from "react"
 import CardMenu from "../components/mainMenu/CardMenu"
 import Modal from "../components/mainMenu/Modal"
-import { LightModeSvg } from "../components/svgs/LightModeSvg"
-import { DarkModeSvg } from "../components/svgs/DarkModeSvg"
-import { ConfigSvg } from "../components/svgs/ConfigSvg"
+import { LightModeSvg } from "../components/svgs/utilitySvgs/LightModeSvg"
+import { DarkModeSvg } from "../components/svgs/utilitySvgs/DarkModeSvg"
+import { ConfigSvg } from "../components/svgs/mainMenuSvgs/ConfigSvg"
 
 export default function MainMenu() {
 

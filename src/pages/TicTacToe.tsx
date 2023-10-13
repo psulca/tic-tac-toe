@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState, useContext } from 'react'
 
 import TicTacToeHeader from '../components/game/TicTacToeHeader'
@@ -6,33 +7,21 @@ import Board from '../components/game/Board';
 import WinnerModal from '../components/game/WinnerModal';
 
 import { SettingsContext } from '../context/settingsContext';
+import { TURNS } from '../constants/game-constans'
+import { checkGameOver } from '../utils/checkGameOver';
+
+import { searchBestMove } from '../algorithms/minimax';
 
 export default function TicTacToe() {
-
-  const TURNS = {
-    X: 'X',
-    O: 'O'
-  };
-
-  const COMBOWINNER = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-  ];
 
   const [board, setBoard] = useState(new Array(9).fill(null));
   const [turn, setTurn] = useState<string>('X');
   const [winner, setWinner] = useState<string>('');
   const [isOver, setGameOver] = useState(false);
   const [score, setScore] = useState<{ X: number; O: number; D: number; }>({ X: 0, O: 0, D: 0 });
-  const [round, setRound] = useState<number>(0);
+  const [round, setRound] = useState<number>(1);
 
-  const { timer } = useContext(SettingsContext)
+  const { timer, difficulty, gameMode } = useContext(SettingsContext)
   const [time, setTime] = useState<number>(Number(timer))
 
   const resetGame = () => {
@@ -43,31 +32,16 @@ export default function TicTacToe() {
     setTime(Number(timer));
   };
 
-  const checkGameOver = (currentBoard: string[]) => {
-    for (const combo of COMBOWINNER) {
-      const [a, b, c] = combo;
-      if (currentBoard[a] &&
-        currentBoard[a] === currentBoard[b] &&
-        currentBoard[b] === currentBoard[c])
-        return currentBoard[a];
-    }
-    const draw = currentBoard.every(cell => cell !== null);
-    const drawResult = draw ? 'draw' : '';
-    return drawResult;
-  };
-
-  const drawSymbolOnBoard = (cell: number) => {
+  const drawSymbolOnBoard = async (cell: number) => {
     if (!isOver) {
       const boardUpdated = [...board];
       if (boardUpdated[cell] === null) {
         boardUpdated[cell] = turn;
         setBoard(boardUpdated);
-
         const gameOver = checkGameOver(boardUpdated);
         if (gameOver !== '') {
           gameOverTrigger(gameOver);
         }
-
         const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
         setTurn(newTurn);
         setTime(Number(timer));
@@ -87,19 +61,35 @@ export default function TicTacToe() {
   }
 
   useEffect(() => {
-    if(timer === 'unlimited') return
+    if (timer === 'unlimited') return
     if (time > 0) {
       const interval = setInterval(() => {
         setTime((prevTime) => prevTime - 1);
       }, 1000);
-
       return () => clearInterval(interval);
     }
     if (time === 0) {
       gameOverTrigger(turn === TURNS.X ? TURNS.O : TURNS.X)
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [time])
+
+  useEffect(() => {
+    const boardUpdated = [...board];
+
+    if (gameMode === 'PVC' && turn === TURNS.O) {
+      const bestMove = searchBestMove(boardUpdated, turn, difficulty);
+      boardUpdated[bestMove] = turn;
+      setBoard(boardUpdated)
+
+      const gameOver = checkGameOver(boardUpdated);
+      if (gameOver !== '') {
+        gameOverTrigger(gameOver);
+      }
+      const newTurn = turn === TURNS.X ? TURNS.O : TURNS.X;
+      setTurn(newTurn);
+      setTime(Number(timer));
+    }
+  }, [turn])
 
   return (
     <>

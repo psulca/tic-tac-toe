@@ -1,6 +1,6 @@
-import { PlayerOneSvg } from "../svgs/PlayerOneSvg";
-import { PlayerTwoSvg } from "../svgs/PlayerTwoSvg";
-import { TurnArrowSvg } from "../svgs/TurnArrowSvg";
+import { PlayerOneSvg } from "../svgs/utilitySvgs/PlayerOneSvg";
+import { PlayerTwoSvg } from "../svgs/utilitySvgs/PlayerTwoSvg";
+import { TurnArrowSvg } from "../svgs/gameSvgs/TurnArrowSvg";
 
 interface TurnProps {
   turn: string;

@@ -1,6 +1,6 @@
-import { BoardSvg } from "../svgs/BoardSvg";
-import { XMarkOneSvg } from "../svgs/XMarkOneSvg";
-import { OMarkOneSvg } from "../svgs/OMarkOneSvg";
+import { BoardSvg } from "../svgs/gameSvgs/BoardSvg";
+import { XMarkOneSvg } from "../svgs/gameSvgs/XMarkOneSvg";
+import { OMarkOneSvg } from "../svgs/gameSvgs/OMarkOneSvg";
 
 interface BoardProps {
   board: string[];
@@ -8,8 +8,6 @@ interface BoardProps {
 }
 
 export default function Board({ board, drawSymbolOnBoard }: BoardProps) {
-
-  
 
   return (
     <main className='tictactoe-board-container'>

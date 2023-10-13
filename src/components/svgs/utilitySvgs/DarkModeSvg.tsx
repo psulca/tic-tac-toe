@@ -1,5 +1,5 @@
 import { useEffect, useRef, useContext } from 'react'
-import { ThemeContext } from '../../context/theme-context'
+import { ThemeContext } from '../../../context/theme-context'
 import Vivus from "vivus"
 
 export const DarkModeSvg = () => {

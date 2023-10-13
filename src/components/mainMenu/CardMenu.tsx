@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import { PlayButtonSvg } from "../svgs/PlayButtonSvg"
+import { PlayButtonSvg } from "../svgs/mainMenuSvgs/PlayButtonSvg"
 import { useContext } from "react"
 import { SettingsContext } from "../../context/settingsContext"
 

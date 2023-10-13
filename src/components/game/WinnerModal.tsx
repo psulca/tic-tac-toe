@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom"
-import { DrawTextSvg } from "../svgs/DrawTextSvg";
-import { WinTextSvg } from "../svgs/WinTextSvg";
-import { XMarkOneSvg } from "../svgs/XMarkOneSvg";
-import { OMarkOneSvg } from "../svgs/OMarkOneSvg";
+import { DrawTextSvg } from "../svgs/modalSvgs/DrawTextSvg";
+import { WinTextSvg } from "../svgs/modalSvgs/WinTextSvg";
+import { XMarkOneSvg } from "../svgs/gameSvgs/XMarkOneSvg";
+import { OMarkOneSvg } from "../svgs/gameSvgs/OMarkOneSvg";
 
 interface WinnerModalProps {
   winner: string;
