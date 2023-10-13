@@ -14,7 +14,6 @@ export function searchBestMove(
     .map((cell, index) => (cell === null ? index : null))
     .filter((cell) => cell !== null);
 
-  console.log(availableMoves)
   if (difficulty === "easy") {
     return availableMoves[Math.floor(Math.random() * availableMoves.length)] as number;
   } else if (difficulty === "medium") {
