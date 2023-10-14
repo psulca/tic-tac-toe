@@ -172,6 +172,11 @@ button:hover {
   gap: 20px;
 }
 
+.menu-card-modes h2 {
+  font-size: 2.7rem;
+  text-align: center;
+}
+
 .menu-card-modes-select {
   display: flex;
   justify-content: center;

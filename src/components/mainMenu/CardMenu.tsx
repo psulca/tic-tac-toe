@@ -27,12 +27,12 @@ export default function CardMenu() {
       <h1>Tic Tac Toe</h1>
       <section className='menu-card'>
         <header className='menu-card-header'>
-          <Link to={'/game'}>
+          <Link to={'/game'} aria-label="Go to game page">
             <PlayButtonSvg />
           </Link>
         </header>
         <section className='menu-card-modes'>
-          <h3>Select Game Mode</h3>
+          <h2>Select Game Mode</h2>
           <div className='menu-card-modes-select'>
             <button className={`border-draw border-line-main ${gameMode === 'PVP' && 'selected'}`}
               onClick={handleToPVP}>PVP</button>
